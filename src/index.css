@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Thiết lập con trỏ chuột pointer cho tất cả các phần tử tương tác */
+button,
+a,
+select,
+input[type="radio"],
+input[type="checkbox"],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Custom Scrollbar siêu mỏng cho dropdown list */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.4); /* màu hổ phách nhạt */
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.8);
+}
+

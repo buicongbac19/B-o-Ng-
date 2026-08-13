@@ -1,0 +1,6 @@
+{
+  "name": "Bào Ngư Khô Việt Hàn",
+  "description": "Landing page giới thiệu và đặt mua sản phẩm Bào Ngư Khô Việt Hàn cao cấp",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
