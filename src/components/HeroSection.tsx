@@ -204,7 +204,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
           <div className="flex items-center gap-2 text-xs text-gray-600 border-b border-gray-100 pb-3">
             <div className="flex items-center text-amber-500 font-bold">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400 mr-1" />
-              <span>4.8/5</span>
+              <span>4.9/5</span>
               <span className="text-gray-400 font-normal ml-1">(250)</span>
             </div>
             <span className="text-gray-300">|</span>
