@@ -7,6 +7,7 @@ import abalonePackagedBag from '../assets/images/abalone_packaged_bag_1786613651
 import abaloneHeroPremium from '../assets/images/abalone_hero_premium_1786615036323.jpg';
 import abaloneHeroDeluxe from '../assets/images/abalone_hero_deluxe_1786615157675.jpg';
 import chandung1 from '../assets/images/chandung1.png';
+import chandung2 from '../assets/images/chan dung 2.png';
 
 export const PRODUCT_IMAGES = {
   hero: 'https://sf-static.upanhlaylink.com/img/image_202608137ed7b36bdd91094bc412540370873ef3.jpg',
@@ -71,7 +72,7 @@ export const PRODUCT_REVIEWS: Review[] = [
   {
     id: 'rev-3',
     name: 'Lan N.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+    avatar: chandung2,
     rating: 5,
     date: '3 ngày trước',
     comment: 'Bào ngư khô con nào con nấy dày mình lắm nha. Mình ngâm nước rồi đem hầm súp nấm, thịt ngọt, dai giòn sần sật y như bào ngư tươi luôn. Cả nhà ai cũng khen ngon.',
