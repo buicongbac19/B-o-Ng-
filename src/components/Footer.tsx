@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           
           <div className="flex items-start gap-2.5">
             <MapPin className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-            <span>Số 10, Nguyễn Cơ Thạch, Mỹ Đình, Hà Nội</span>
+            <span>Tổ 17,  Phường Hải Châu 1, quận Hải Châu, Tp Đà Nẵng</span>
           </div>
 
           <div className="flex items-center gap-2.5">
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-3 text-center text-[11px] text-gray-500">
-          © 2026 Bào Ngư Khô Việt Hàn - LadiShop. Bản quyền thuộc về LadiShop.
+          © 2026 Bào Ngư Sấy Golden Food. All rights reserved.
         </div>
 
       </div>

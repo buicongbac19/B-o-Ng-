@@ -22,11 +22,12 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onOrderClick }
         {/* Buy Now Button */}
         <button
           id="btn-sticky-buy-now"
+          type="button"
           onClick={onOrderClick}
           className="flex-[2] bg-gradient-to-r from-orange-500 via-amber-600 to-orange-600 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg shadow-orange-500/25 flex items-center justify-center gap-1.5 uppercase tracking-wide active:scale-95 transition-all"
         >
           <ShoppingCart className="w-4 h-4" />
-          <span>ĐẶT HÀNG NGAY (279K)</span>
+          <span>ĐẶT HÀNG NGAY (480K)</span>
         </button>
 
       </div>

@@ -23,7 +23,9 @@ export function orderToRow(order: SubmittedOrder): (string | number)[] {
 
   return [
     order.id,
-    order.createdAt,
+    isNaN(new Date(order.createdAt).getTime()) 
+      ? order.createdAt 
+      : new Date(order.createdAt).toLocaleString('vi-VN'),
     order.fullName,
     `'${order.phone}`, // prefix ' để Google Sheet giữ số 0 đầu
     order.province,

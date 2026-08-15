@@ -11,7 +11,7 @@ export const ShopBadge: React.FC = () => {
           <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-amber-500 shrink-0 shadow-sm">
             <img
               src={PRODUCT_IMAGES.hero}
-              alt="HAISANSHOP Logo"
+              alt="BÀO NGƯ SẤY GOLDEN FOOD Logo"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -20,7 +20,7 @@ export const ShopBadge: React.FC = () => {
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="font-extrabold text-gray-900 text-base tracking-tight">
-                HAISANSHOP
+                BÀO NGƯ SẤY GOLDEN FOOD
               </h3>
               <CheckCircle className="w-4 h-4 fill-emerald-500 text-white" />
             </div>

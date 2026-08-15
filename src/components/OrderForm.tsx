@@ -3,6 +3,7 @@ import { ShoppingBag, CheckCircle2, ShieldCheck, MapPin, Phone, User, Gift, Cred
 import { QUANTITY_OPTIONS } from '../data/productData';
 import { OrderFormData, SubmittedOrder } from '../types';
 import { syncOrderToGoogleSheets } from '../lib/googleSheets';
+import { VIETNAM_PROVINCES } from '../data/vietnamLocations';
 
 interface OrderFormProps {
   onOrderSuccess: (order: SubmittedOrder) => void;
@@ -121,7 +122,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
     district: 'Quận Nam Từ Liêm',
     ward: 'Phường Mỹ Đình 1',
     addressDetail: '',
-    quantityOptionId: '1_pack_200g',
+    quantityOptionId: '1_pack_500g',
     note: '',
     paymentMethod: 'cod',
   });
@@ -162,7 +163,15 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
           setFormData((prev) => ({ ...prev, province: defaultProvince.name }));
         }
       } catch (err) {
-        console.error('Lỗi khi tải danh sách Tỉnh/Thành:', err);
+        console.error('Lỗi khi tải danh sách Tỉnh/Thành, sử dụng dữ liệu cục bộ:', err);
+        const formatted = VIETNAM_PROVINCES.map((p) => ({ code: p.code, name: p.name }));
+        setProvinces(formatted);
+        
+        const defaultProvince = formatted.find((p) => p.name.includes('Hà Nội')) || formatted[0];
+        if (defaultProvince) {
+          setSelectedProvinceCode(defaultProvince.code);
+          setFormData((prev) => ({ ...prev, province: defaultProvince.name }));
+        }
       } finally {
         setLoadingProvinces(false);
       }
@@ -192,7 +201,19 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
           setFormData((prev) => ({ ...prev, district: '' }));
         }
       } catch (err) {
-        console.error('Lỗi khi tải danh sách Quận/Huyện:', err);
+        console.error('Lỗi khi tải danh sách Quận/Huyện, sử dụng dữ liệu cục bộ:', err);
+        const localProvince = VIETNAM_PROVINCES.find((p) => p.code === selectedProvinceCode);
+        const formatted = (localProvince?.districts || []).map((d) => ({ code: d.code, name: d.name }));
+        setDistricts(formatted);
+
+        const defaultDistrict = formatted.find((d) => d.name.includes('Nam Từ Liêm')) || formatted[0];
+        if (defaultDistrict) {
+          setSelectedDistrictCode(defaultDistrict.code);
+          setFormData((prev) => ({ ...prev, district: defaultDistrict.name }));
+        } else {
+          setSelectedDistrictCode('');
+          setFormData((prev) => ({ ...prev, district: '' }));
+        }
       } finally {
         setLoadingDistricts(false);
       }
@@ -227,7 +248,20 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
           setFormData((prev) => ({ ...prev, ward: '' }));
         }
       } catch (err) {
-        console.error('Lỗi khi tải danh sách Phường/Xã:', err);
+        console.error('Lỗi khi tải danh sách Phường/Xã, sử dụng dữ liệu cục bộ:', err);
+        const localProvince = VIETNAM_PROVINCES.find((p) => p.code === selectedProvinceCode);
+        const localDistrict = localProvince?.districts.find((d) => d.code === selectedDistrictCode);
+        const formatted = (localDistrict?.wards || []).map((w, idx) => ({ code: String(idx), name: w }));
+        setWards(formatted);
+
+        const defaultWard = formatted.find((w) => w.name.includes('Mỹ Đình 1')) || formatted[0];
+        if (defaultWard) {
+          setSelectedWardCode(defaultWard.code);
+          setFormData((prev) => ({ ...prev, ward: defaultWard.name }));
+        } else {
+          setSelectedWardCode('');
+          setFormData((prev) => ({ ...prev, ward: '' }));
+        }
       } finally {
         setLoadingWards(false);
       }
@@ -333,7 +367,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
     const order: SubmittedOrder = {
       ...formData,
       id: `BH-${Math.floor(100000 + Math.random() * 900000)}`,
-      createdAt: new Date().toLocaleString('vi-VN'),
+      createdAt: new Date().toISOString(),
       totalAmount: selectedPackage.price,
       status: 'Đã tiếp nhận đơn hàng',
     };
@@ -352,7 +386,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
       district: districts.find((d) => d.name.includes('Nam Từ Liêm'))?.name || districts[0]?.name || '',
       ward: wards.find((w) => w.name.includes('Mỹ Đình 1'))?.name || wards[0]?.name || '',
       addressDetail: '',
-      quantityOptionId: '1_pack_200g',
+      quantityOptionId: '1_pack_500g',
       note: '',
       paymentMethod: 'cod',
     });

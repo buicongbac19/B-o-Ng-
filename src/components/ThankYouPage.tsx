@@ -103,7 +103,9 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ order, onBackToHome 
                   <Calendar className="w-3.5 h-3.5 text-gray-400" /> Ngày đặt:
                 </span>
                 <span className="text-gray-800 font-medium">
-                  {new Date(order.createdAt).toLocaleDateString('vi-VN')} {new Date(order.createdAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                  {!isNaN(new Date(order.createdAt).getTime())
+                    ? `${new Date(order.createdAt).toLocaleDateString('vi-VN')} ${new Date(order.createdAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}`
+                    : order.createdAt}
                 </span>
               </div>
             </div>

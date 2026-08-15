@@ -80,6 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
 
           {/* Navigation Arrows */}
           <button
+            type="button"
             onClick={prevImage}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1.5 rounded-full transition-all z-10"
             aria-label="Ảnh trước"
@@ -87,6 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
+            type="button"
             onClick={nextImage}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1.5 rounded-full transition-all z-10"
             aria-label="Ảnh tiếp"
@@ -96,6 +98,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
 
           {/* Gallery View Indicator */}
           <button
+            type="button"
             onClick={() => onOpenGallery(currentImgIndex)}
             className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-[10px] font-medium px-2 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm z-20"
           >
@@ -126,10 +129,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
           {/* Price Header */}
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-3xl font-black text-red-600 tracking-tight">
-              279.000đ
+              480.000đ
             </span>
             <span className="text-sm font-semibold text-gray-400 line-through">
-              560.000đ
+              960.000đ
             </span>
             <span className="bg-pink-100 text-red-600 text-xs font-bold px-2.5 py-1 rounded-full">
               Tiết kiệm 50%
@@ -189,10 +192,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
           {/* Primary Action Button */}
           <button
             id="btn-hero-buy-now"
+            type="button"
             onClick={onOrderClick}
             className="w-full bg-gradient-to-r from-orange-500 via-amber-600 to-orange-600 text-white font-extrabold text-base py-3.5 px-6 rounded-xl shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 uppercase tracking-wide"
           >
-            SẮN NGAY VỚI GIÁ 279.000đ
+            SĂN NGAY VỚI GIÁ 480.000đ
           </button>
         </div>
 
