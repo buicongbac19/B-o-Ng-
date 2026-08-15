@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
             Bào Ngư Sấy Golden Food
           </h2>
           <p className="text-xs text-gray-600 font-medium mt-0.5">
-            123
+            Bào ngư khô – lựa chọn lý tưởng cho những bữa ăn vừa ngon miệng vừa sang trọng
           </p>
         </div>
 
