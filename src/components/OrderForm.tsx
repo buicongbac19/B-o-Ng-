@@ -493,7 +493,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
           {/* Location Dropdowns */}
           <div className="space-y-2">
             <label className="block text-xs font-bold text-gray-800">
-              Khu vực giao hàng <span className="text-red-500">*</span>
+              Địa chỉ giao hàng <span className="text-red-500">*</span>
             </label>
             
             <div className="space-y-2.5">
