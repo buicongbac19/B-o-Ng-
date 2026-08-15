@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Star, ShieldCheck, Truck, RefreshCw, CheckCircle2, ChevronLeft, ChevronRight, Eye, ShoppingBag } from 'lucide-react';
-import { PRODUCT_IMAGES } from '../data/productData';
+import { Star, ShieldCheck, Truck, RefreshCw, CheckCircle2, ChevronLeft, ChevronRight, Eye, ShoppingBag, Package } from 'lucide-react';
+import { PRODUCT_IMAGES, QUANTITY_OPTIONS } from '../data/productData';
 import { FlashSaleBanner } from './FlashSaleBanner';
 
 interface HeroSectionProps {
@@ -17,6 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
   ];
 
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [selectedTier, setSelectedTier] = useState('1_pack_500g');
 
   const prevImage = () => {
     setCurrentImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -25,6 +26,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
   const nextImage = () => {
     setCurrentImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
+
+  const handleSelectTierAndOrder = (tierId: string) => {
+    setSelectedTier(tierId);
+    // Dispatch a custom event so OrderForm can pick up the selected package
+    window.dispatchEvent(new CustomEvent('select-package', { detail: { packageId: tierId } }));
+    onOrderClick();
+  };
+
+  const selectedOption = QUANTITY_OPTIONS.find((q) => q.id === selectedTier) || QUANTITY_OPTIONS[1];
 
   return (
     <section id="overview-section" className="bg-gradient-to-b from-amber-50/50 to-white pb-6">
@@ -126,23 +136,63 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
 
         {/* Price & Primary Details Block */}
         <div className="p-4 space-y-3">
-          {/* Price Header */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-3xl font-black text-red-600 tracking-tight">
-              480.000đ
-            </span>
-            <span className="text-sm font-semibold text-gray-400 line-through">
-              960.000đ
-            </span>
-            <span className="bg-pink-100 text-red-600 text-xs font-bold px-2.5 py-1 rounded-full">
-              Tiết kiệm 50%
-            </span>
-          </div>
 
           {/* Deal tagline */}
           <div className="text-xs font-bold text-red-600 flex items-center gap-2 bg-pink-50/90 p-2.5 rounded-xl border border-pink-100/90">
             <ShoppingBag className="w-4 h-4 text-red-600 shrink-0" />
             <span>Ưu đãi giờ vàng! Săn ngay!</span>
+          </div>
+
+          {/* === 3-Tier Price Selector (Vertical) === */}
+          <div className="space-y-2">
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-700">
+              <Package className="w-3.5 h-3.5 text-amber-600" />
+              <span>Chọn quy cách:</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              {QUANTITY_OPTIONS.map((opt) => {
+                const isSelected = selectedTier === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => setSelectedTier(opt.id)}
+                    className={`relative flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
+                      isSelected
+                        ? 'border-orange-500 bg-orange-50 shadow-md shadow-orange-100'
+                        : 'border-gray-200 bg-white hover:border-amber-300 hover:bg-amber-50/50'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                        isSelected ? 'border-orange-500 bg-orange-500' : 'border-gray-300'
+                      }`}>
+                        {isSelected && <CheckCircle2 className="w-4 h-4 text-white" />}
+                      </div>
+                      <div className="text-left">
+                        <span className={`text-sm font-black block ${isSelected ? 'text-orange-600' : 'text-gray-800'}`}>
+                          {opt.weight}
+                        </span>
+                        <span className="text-[11px] text-gray-500">{opt.gift}</span>
+                      </div>
+                    </div>
+                    <div className="text-right flex flex-col items-end">
+                      <span className={`text-base font-black ${isSelected ? 'text-red-600' : 'text-gray-800'}`}>
+                        {opt.price.toLocaleString('vi-VN')}đ
+                      </span>
+                      <span className="text-[10px] text-gray-400 line-through">
+                        {opt.originalPrice.toLocaleString('vi-VN')}đ
+                      </span>
+                    </div>
+                    {opt.popular && (
+                      <span className="absolute -top-2.5 left-10 bg-red-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm">
+                        Bán chạy
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Product Title */}
@@ -189,14 +239,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGa
             </div>
           </div>
 
-          {/* Primary Action Button */}
+          {/* Primary Action Button - dynamic price */}
           <button
             id="btn-hero-buy-now"
             type="button"
-            onClick={onOrderClick}
+            onClick={() => handleSelectTierAndOrder(selectedTier)}
             className="w-full bg-gradient-to-r from-orange-500 via-amber-600 to-orange-600 text-white font-extrabold text-base py-3.5 px-6 rounded-xl shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 uppercase tracking-wide"
           >
-            SĂN NGAY VỚI GIÁ 480.000đ
+            SĂN NGAY VỚI GIÁ {selectedOption.price.toLocaleString('vi-VN')}đ
           </button>
         </div>
 

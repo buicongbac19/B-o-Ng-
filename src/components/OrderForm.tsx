@@ -145,6 +145,18 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
   // Selected package option
   const selectedPackage = QUANTITY_OPTIONS.find((q) => q.id === formData.quantityOptionId) || QUANTITY_OPTIONS[1];
 
+  // Listen for package selection from HeroSection price tier selector
+  useEffect(() => {
+    const handleSelectPackage = (e: Event) => {
+      const customEvent = e as CustomEvent<{ packageId: string }>;
+      if (customEvent.detail?.packageId) {
+        setFormData((prev) => ({ ...prev, quantityOptionId: customEvent.detail.packageId }));
+      }
+    };
+    window.addEventListener('select-package', handleSelectPackage);
+    return () => window.removeEventListener('select-package', handleSelectPackage);
+  }, []);
+
   // Fetch provinces on mount
   useEffect(() => {
     const fetchProvinces = async () => {
