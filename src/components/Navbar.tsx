@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOrder
         <div className="hidden sm:flex items-center gap-4">
           <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5" /> Cam kết chính hãng</span>
           <a href="tel:0354635234" className="flex items-center gap-1 hover:underline font-bold">
-            <PhoneCall className="w-3.5 h-3.5" /> Hotline: 0354.635.234
+            <PhoneCall className="w-3.5 h-3.5" /> Hotline: 0352.949.123
           </a>
         </div>
       </div>
