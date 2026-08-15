@@ -6,6 +6,7 @@ import userQuadAbalone from '../assets/images/user_quad_abalone_1786592634790.jp
 import abalonePackagedBag from '../assets/images/abalone_packaged_bag_1786613651752.jpg';
 import abaloneHeroPremium from '../assets/images/abalone_hero_premium_1786615036323.jpg';
 import abaloneHeroDeluxe from '../assets/images/abalone_hero_deluxe_1786615157675.jpg';
+import chandung1 from '../assets/images/chandung1.png';
 
 export const PRODUCT_IMAGES = {
   hero: 'https://sf-static.upanhlaylink.com/img/image_202608137ed7b36bdd91094bc412540370873ef3.jpg',
@@ -61,7 +62,7 @@ export const PRODUCT_REVIEWS: Review[] = [
   {
     id: 'rev-2',
     name: 'Minh P.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+    avatar: chandung1,
     rating: 5,
     date: '2 ngày trước',
     comment: 'Chất lượng tốt, giao hàng nhanh, đóng gói cẩn thận. Màu sắc đúng như mô tả, rất ưng!',

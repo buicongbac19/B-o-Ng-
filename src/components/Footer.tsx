@@ -9,10 +9,10 @@ export const Footer: React.FC = () => {
         {/* Brand Header */}
         <div>
           <h2 className="text-xl font-black text-gray-900 tracking-tight">
-            LadiShop
+            Bào Ngư Sấy Golden Food
           </h2>
           <p className="text-xs text-gray-600 font-medium mt-0.5">
-            Địa chỉ uy tín cung cấp sản phẩm chất lượng
+            123
           </p>
         </div>
 
