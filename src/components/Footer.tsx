@@ -44,9 +44,17 @@ export const Footer: React.FC = () => {
 
         {/* Social Links matching Screenshot 18 */}
         <div className="flex items-center gap-3 pt-2">
-          <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow hover:opacity-90 transition-opacity">
-            f
-          </a>
+          <a
+  href="https://www.facebook.com/baongusaygoldenfood?locale=vi_VN"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+  className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow hover:opacity-90 transition-opacity"
+>
+  f
+</a>
+          
+      
           <a href="#" aria-label="Instagram" className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center font-bold text-xs shadow hover:opacity-90 transition-opacity">
             ig
           </a>
