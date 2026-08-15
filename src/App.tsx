@@ -15,6 +15,7 @@ import { MobileStickyBar } from './components/MobileStickyBar';
 import { RecentOrderToast } from './components/RecentOrderToast';
 import { ImageLightboxModal } from './components/ImageLightboxModal';
 import { OrderSuccessModal } from './components/OrderSuccessModal';
+import { ThankYouPage } from './components/ThankYouPage';
 import { SubmittedOrder } from './types';
 
 export default function App() {
@@ -26,6 +27,8 @@ export default function App() {
 
   // Submitted Order state
   const [submittedOrder, setSubmittedOrder] = useState<SubmittedOrder | null>(null);
+  const [confirmedOrder, setConfirmedOrder] = useState<SubmittedOrder | null>(null);
+  const [showThankYou, setShowThankYou] = useState(false);
 
 
   const handleScrollToOrder = () => {
@@ -44,8 +47,31 @@ export default function App() {
     setSubmittedOrder(order);
   };
 
+  const handleCloseSuccessModal = () => {
+    if (submittedOrder) {
+      setConfirmedOrder(submittedOrder);
+      setShowThankYou(true);
+    }
+    setSubmittedOrder(null);
+  };
+
+
+  if (showThankYou) {
+    return (
+      <ThankYouPage
+        order={confirmedOrder}
+        onBackToHome={() => {
+          setShowThankYou(false);
+          setConfirmedOrder(null);
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }}
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50/40 via-white to-amber-50/20 text-gray-900 font-sans antialiased selection:bg-amber-200">
+
       
       {/* Sticky Top Header Navigation */}
       <Navbar
@@ -111,8 +137,9 @@ export default function App() {
       {/* Order Confirmation Modal */}
       <OrderSuccessModal
         order={submittedOrder}
-        onClose={() => setSubmittedOrder(null)}
+        onClose={handleCloseSuccessModal}
       />
+
 
 
 

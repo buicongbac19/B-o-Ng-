@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Globe, Clock, Music2, Zap } from 'lucide-react';
+import { MapPin, Phone, Clock, Music2, Zap } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -31,17 +31,6 @@ export const Footer: React.FC = () => {
             </a>
           </div>
 
-          <div className="flex items-center gap-2.5">
-            <Mail className="w-4 h-4 text-amber-700 shrink-0" />
-            <span>hotro@gmail.com</span>
-          </div>
-
-          <div className="flex items-center gap-2.5">
-            <Globe className="w-4 h-4 text-amber-700 shrink-0" />
-            <a href="https://ladipage.vn" target="_blank" rel="noreferrer" className="hover:underline">
-              ladipage.vn
-            </a>
-          </div>
 
           <div className="flex items-start gap-2.5 pt-1">
             <Clock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
