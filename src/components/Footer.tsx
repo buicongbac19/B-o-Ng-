@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-start gap-2.5 pt-1">
             <Clock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-gray-900">Thời gian làm việc: 8:00 - 22:00</p>
+              <p className="font-semibold text-gray-900">Thời gian làm việ<c:24/7></c:24/7></p>
               <p className="text-[11px] text-gray-500">(Tất cả các ngày trong tuần)</p>
             </div>
           </div>
