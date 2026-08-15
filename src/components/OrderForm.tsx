@@ -688,4 +688,4 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
       </div>
     </section>
   );
-};
+}
