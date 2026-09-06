@@ -150,10 +150,10 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ order, onBackToHome 
 
         <div className="flex flex-col sm:flex-row gap-3 pt-4">
           <a
-            href="tel:0354635234"
+            href="tel:0969081830"
             className="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/80 font-bold text-xs py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all active:scale-98"
           >
-            <PhoneCall className="w-4 h-4 text-amber-700" /> Hotline: 0354.635.234
+            <PhoneCall className="w-4 h-4 text-amber-700" /> Hotline: 0969.081.830
           </a>
         </div>
 

@@ -94,10 +94,10 @@ export const OrderSuccessModal: React.FC<OrderSuccessModalProps> = ({ order, onC
         {/* Action buttons */}
         <div className="space-y-2 pt-1">
           <a
-            href="tel:0354635234"
+            href="tel:0969081830"
             className="w-full bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2 border border-amber-300 transition-all"
           >
-            <PhoneCall className="w-4 h-4 text-amber-700" /> Cần tư vấn gấp? Gọi 0354.635.234
+            <PhoneCall className="w-4 h-4 text-amber-700" /> Cần tư vấn gấp? Gọi 0969.081.830
           </a>
 
           <button

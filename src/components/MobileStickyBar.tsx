@@ -12,7 +12,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onOrderClick }
         
         {/* Call Hotline Button */}
         <a
-          href="tel:0354635234"
+          href="tel:0969081830"
           className="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs py-3 px-3 rounded-xl border border-amber-300 flex items-center justify-center gap-1.5 active:scale-95 transition-all"
         >
           <Phone className="w-4 h-4 text-amber-600 animate-bounce" />
