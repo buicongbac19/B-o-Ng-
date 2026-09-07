@@ -1,3 +1,4 @@
+import { QuantityOption, Review } from '../types';
 import product1 from '../assets/images/product_1.jpg';
 import product2 from '../assets/images/product_2.jpg';
 import product3 from '../assets/images/product_3.jpg';
@@ -120,7 +121,7 @@ export const COOKING_METHODS = [
     badge: 'Tiện lợi & Nhanh chóng',
     summary: 'Phù hợp khi không có thời gian chuẩn bị',
     instructions: 'Ngâm nước lạnh 15 phút, rửa lại, rồi mang đi hầm kèm các nguyên liệu khác trong 45-60 phút ở lửa vừa, thêm gia vị cho phù hợp rồi thưởng thức.',
-    image: abaloneDishStew,
+    image: PRODUCT_IMAGES.stewDish,
   },
   {
     type: 'Món xào',
