@@ -7,13 +7,13 @@ import abalonePackagedBag from '../assets/images/abalone_packaged_bag_1786613651
 import abaloneHeroPremium from '../assets/images/abalone_hero_premium_1786615036323.jpg';
 import abaloneHeroDeluxe from '../assets/images/abalone_hero_deluxe_1786615157675.jpg';
 import chandung1 from '../assets/images/chandung1.png';
-import chandung2 from '../assets/images/chan dung 2.png';
+import chandung2 from '../assets/images/chandung2.png';
 
 export const PRODUCT_IMAGES = {
-  hero: 'https://sf-static.upanhlaylink.com/img/image_202608137ed7b36bdd91094bc412540370873ef3.jpg',
-  stewDish: 'https://sf-static.upanhlaylink.com/img/image_2026081343c262a2972b904f6e6a387ee9b1e9d3.jpg',
-  platePresentation: 'https://sf-static.upanhlaylink.com/img/image_20260813ec897c22d8a02614c6501cf6dfe09d6a.jpg',
-  packagedBag: 'https://sf-static.upanhlaylink.com/img/image_202608137deb534ac5e8fb5bb497ed6a1fab14d7.jpg',
+  hero: driedAbaloneHero,
+  stewDish: abaloneDishStew,
+  platePresentation: abalonePlateNew,
+  packagedBag: abalonePackagedBag,
   handHoldingAbalone: driedAbaloneHero,
   driedCloseUp: driedAbaloneHero,
 };
