@@ -8,10 +8,11 @@ interface ProductGalleryProps {
 
 export const ProductGallery: React.FC<ProductGalleryProps> = ({ onOpenGallery }) => {
   const images = [
-    { src: PRODUCT_IMAGES.hero, title: 'Bào ngư khô nguyên con' },
-    { src: PRODUCT_IMAGES.packagedBag, title: 'Túi đựng Bào Ngư Khô Việt Hàn' },
-    { src: PRODUCT_IMAGES.stewDish, title: 'Bào ngư ngâm nở chế biến' },
-    { src: PRODUCT_IMAGES.platePresentation, title: 'Đĩa bào ngư sấy khô cao cấp' },
+    { src: PRODUCT_IMAGES.product1, title: 'Nhân bào ngư khô Việt Hàn' },
+    { src: PRODUCT_IMAGES.product2, title: 'Bào ngư giàu dinh dưỡng & protein' },
+    { src: PRODUCT_IMAGES.product3, title: 'Hướng dẫn chế biến món hầm & xào' },
+    { src: PRODUCT_IMAGES.product4, title: 'Hình ảnh tổng hợp bào ngư thực tế' },
+    { src: PRODUCT_IMAGES.product5, title: 'Đĩa nhân bào ngư sấy khô cao cấp' },
   ];
 
   return (
@@ -53,7 +54,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ onOpenGallery })
 
           {/* Right Thumbnails Column */}
           <div className="col-span-1 flex flex-col gap-2">
-            {images.slice(1, 4).map((img, idx) => (
+            {images.slice(1).map((img, idx) => (
               <div
                 key={idx}
                 onClick={() => onOpenGallery(idx + 1)}

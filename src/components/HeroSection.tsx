@@ -10,10 +10,11 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOrderClick, onOpenGallery }) => {
   const images = [
-    PRODUCT_IMAGES.hero,
-    PRODUCT_IMAGES.stewDish,
-    PRODUCT_IMAGES.platePresentation,
-    PRODUCT_IMAGES.packagedBag,
+    PRODUCT_IMAGES.product1,
+    PRODUCT_IMAGES.product2,
+    PRODUCT_IMAGES.product3,
+    PRODUCT_IMAGES.product4,
+    PRODUCT_IMAGES.product5,
   ];
 
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

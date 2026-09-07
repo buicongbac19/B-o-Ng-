@@ -43,7 +43,7 @@ export const HealthBenefits: React.FC = () => {
         {/* Banner image preview */}
         <div className="rounded-xl overflow-hidden shadow border border-amber-300/40">
           <img
-            src={PRODUCT_IMAGES.hero}
+            src={PRODUCT_IMAGES.product2}
             alt="Bào ngư bổ dưỡng"
             className="w-full h-44 object-cover"
             referrerPolicy="no-referrer"

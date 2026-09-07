@@ -37,10 +37,10 @@ export const FeaturedCallToAction: React.FC<FeaturedCallToActionProps> = ({ onOr
 
         {/* 4-Image collage grid matching screenshot 16 */}
         <div className="grid grid-cols-2 gap-1.5 rounded-xl overflow-hidden shadow-sm border border-amber-100">
-          <img src={PRODUCT_IMAGES.hero} alt="Bào ngư 1" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
-          <img src={PRODUCT_IMAGES.stewDish} alt="Bào ngư 2" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
-          <img src={PRODUCT_IMAGES.platePresentation} alt="Bào ngư 3" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
-          <img src={PRODUCT_IMAGES.hero} alt="Bào ngư 4" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
+          <img src={PRODUCT_IMAGES.product1} alt="Bào ngư 1" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
+          <img src={PRODUCT_IMAGES.product2} alt="Bào ngư 2" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
+          <img src={PRODUCT_IMAGES.product3} alt="Bào ngư 3" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
+          <img src={PRODUCT_IMAGES.product5} alt="Bào ngư 4" className="w-full h-28 object-cover" referrerPolicy="no-referrer" />
         </div>
 
         {/* Pricing */}

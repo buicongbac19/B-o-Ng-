@@ -1,21 +1,23 @@
-import { QuantityOption, Review } from '../types';
-import driedAbaloneHero from '../assets/images/dried_abalone_hero_1786525643861.jpg';
-import abaloneDishStew from '../assets/images/abalone_dish_stew_1786525741598.jpg';
-import abalonePlateNew from '../assets/images/abalone_plate_new_1786527320243.jpg';
-import userQuadAbalone from '../assets/images/user_quad_abalone_1786592634790.jpg';
-import abalonePackagedBag from '../assets/images/abalone_packaged_bag_1786613651752.jpg';
-import abaloneHeroPremium from '../assets/images/abalone_hero_premium_1786615036323.jpg';
-import abaloneHeroDeluxe from '../assets/images/abalone_hero_deluxe_1786615157675.jpg';
+import product1 from '../assets/images/product_1.jpg';
+import product2 from '../assets/images/product_2.jpg';
+import product3 from '../assets/images/product_3.jpg';
+import product4 from '../assets/images/product_4.jpg';
+import product5 from '../assets/images/product_5.jpg';
 import chandung1 from '../assets/images/chandung1.png';
 import chandung2 from '../assets/images/chandung2.png';
 
 export const PRODUCT_IMAGES = {
-  hero: driedAbaloneHero,
-  stewDish: abaloneDishStew,
-  platePresentation: abalonePlateNew,
-  packagedBag: abalonePackagedBag,
-  handHoldingAbalone: driedAbaloneHero,
-  driedCloseUp: driedAbaloneHero,
+  hero: product1,
+  stewDish: product2,
+  platePresentation: product3,
+  packagedBag: product4,
+  handHoldingAbalone: product5,
+  driedCloseUp: product5,
+  product1,
+  product2,
+  product3,
+  product4,
+  product5,
 };
 
 export const QUANTITY_OPTIONS: QuantityOption[] = [
