@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, CheckCircle2, ShieldCheck, MapPin, Phone, User, Gift, CreditCard, ChevronRight, Loader2, AlertCircle, ChevronDown } from 'lucide-react';
+import { ShoppingBag, ShieldCheck, MapPin, Phone, User, Gift, ChevronRight, Loader2, AlertCircle, ChevronDown } from 'lucide-react';
 import { QUANTITY_OPTIONS } from '../data/productData';
 import { OrderFormData, SubmittedOrder } from '../types';
 import { syncOrderToGoogleSheets } from '../lib/googleSheets';
@@ -610,40 +610,6 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onOrderSuccess }) => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Payment Method Selector */}
-          <div className="space-y-1 pt-1">
-            <label className="block text-xs font-bold text-gray-800">
-              Hình thức thanh toán
-            </label>
-            <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
-              <button
-                type="button"
-                onClick={() => setFormData({ ...formData, paymentMethod: 'cod' })}
-                className={`p-2.5 rounded-xl border text-center flex items-center justify-center gap-1.5 transition-all ${
-                  formData.paymentMethod === 'cod'
-                    ? 'border-amber-600 bg-amber-50 text-amber-900 font-bold'
-                    : 'border-gray-200 text-gray-600 bg-white'
-                }`}
-              >
-                <CheckCircle2 className={`w-4 h-4 ${formData.paymentMethod === 'cod' ? 'text-amber-600' : 'text-gray-400'}`} />
-                <span>Thanh toán COD</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setFormData({ ...formData, paymentMethod: 'transfer' })}
-                className={`p-2.5 rounded-xl border text-center flex items-center justify-center gap-1.5 transition-all ${
-                  formData.paymentMethod === 'transfer'
-                    ? 'border-amber-600 bg-amber-50 text-amber-900 font-bold'
-                    : 'border-gray-200 text-gray-600 bg-white'
-                }`}
-              >
-                <CreditCard className={`w-4 h-4 ${formData.paymentMethod === 'transfer' ? 'text-amber-600' : 'text-gray-400'}`} />
-                <span>Chuyển khoản</span>
-              </button>
             </div>
           </div>
 
